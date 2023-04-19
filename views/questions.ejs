@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Questões</title>
+
+</head>
+
+<body>
+    <header>
+        <%-include('./partials/navbar') %>
+    </header>
+    <div class="container">
+
+        <div class="card mt-5">
+            <div class="card-header">
+                <div class="form-group mb-3 mt-3">
+                    <form action="/matters/<%=idMatter %>/questions/search/" method="GET">
+                        <div class="input-group">
+                            <input style="margin-right: 30px;" type="text" class="form-control" id="search"
+                                name="search" placeholder="Pesquise uma pergunta" aria-label="Recipient's username"
+                                aria-describedby="button-addon2">
+                            <div class="input-group-append">
+                                <button type="submit" id="pretobtn">Pesquisar</button>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+                </div>
+            </div>
+            <div class="card-body">
+                <div>
+                    <a class="text-decoration-none" href="/matters/<%= idMatter %>/questions/new" type="button"
+                        id="verdebtn">Nova pergunta</a>
+                </div>
+                <div class="teste form-group mb-3 mt-3">
+                    <% questions.forEach(question=> { %>
+                        <div class="mt-4 input-group" id="perg">
+                            <div class="card-body">
+                                <div class="d-flex flex-column flex-lg-row">
+                                    <img id="logo" src="/pergunta.svg">
+                                    <div class="row flex-fill">
+                                        <div class="col-sm-5">
+
+                                            <div class="d-inline text-break">
+                                                <h4 class="h5">
+                                                    <%= question.title_question %>
+                                                </h4>
+
+                                                <span class="badge bg-secondary">Às <%=
+                                                        moment(question.dt_question).format('HH:mm') %> de
+                                                        <%=moment(question.dt_question).format('DD/MM/YYYY') %> </span>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-4 py-2">
+                                            <span style=" font-size: 20px; margin-left: 60px; font-weight: bold;">Por:
+                                                <%=question.name_user %></span>
+                                        </div>
+
+                                        <div class="col-sm-3 text-lg-end">
+                                            <a class="text-decoration-none"
+                                                href="/matters/<%=idMatter %>/questions/<%= question.pk_id_question %>"
+                                                id="azulbtn" style="float: right;" type="button">Ver
+                                                Discussão</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <% }) %>
+                </div>
+
+            </div>
+        </div>
+
+
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

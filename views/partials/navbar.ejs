@@ -1,0 +1,24 @@
+<nav class="navbar navbar-light bg-secondary">
+    <a href="http://localhost:3333/courses" class="navbar-brand">
+        <div class="d-flex flex-row">
+            <div class="ms-3">
+                <img id="logo" src="/logot.png">
+            </div>
+            <div class="d-flex align-items-center ms-3">
+                Helpfac
+            </div>
+        </div>
+    </a>
+    <div class="justify-content-end">
+        <% if(isAdmin==1){ %>
+            <a class="btn" href="/courses-admin">Cursos</a>
+            <a class="btn" href="/matters-admin">Materias</a>
+            <a class="btn" href="/myquestions">Perguntas</a>
+        <% } %>
+        <% if(isAdmin!=1){ %>
+            <a class="btn" href="/myquestions">Minhas Perguntas</a>
+        <% } %>
+        <a class="btn" href="/logout" style="margin-left: 25px; margin-right: 10px;"><img id="logo"
+            src="/deslogar.svg" style="width: 40px; height: 40px"></a>
+    </div>
+</nav>

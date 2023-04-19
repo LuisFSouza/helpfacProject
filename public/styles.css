@@ -1,0 +1,238 @@
+html, body {
+    font-family: 'Roboto', sans-serif;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(gainsboro,   white);
+    height: 100%;
+}
+
+#topo {
+
+
+    color: #fff;
+    background-color: #6c7ae0;
+
+
+}
+
+
+
+#pretobtn {
+    background-color: white;
+    color: black;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: black;
+    transition-duration: 0.4s;
+    padding: 7px 24px;
+
+}
+
+#azulbtn {
+    background-color: white;
+    color: rgb(41, 138, 194);
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(41, 138, 194);
+    transition-duration: 0.4s;
+    padding: 7px 24px;
+
+}
+
+#azulbtn:hover {
+    background-color: rgb(41, 138, 194);
+    color: white;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(41, 138, 194);
+    padding: 7px 24px;
+
+
+}
+
+a:link { text-decoration: none; }
+
+
+a:visited { text-decoration: none; }
+
+
+a:hover { text-decoration: none; }
+
+
+a:active { text-decoration: none; }
+
+#cinzabtn {
+    background-color: white;
+    color: rgb(128, 130, 131);
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(128, 130, 131);
+    transition-duration: 0.4s;
+    padding: 7px 24px;
+
+}
+
+#cinzabtn:hover {
+    background-color: rgb(128, 130, 131);
+    color: white;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(128, 130, 131);
+    padding: 7px 24px;
+
+
+}
+
+#arqvbtn{
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(0, 0, 0);
+}
+
+hr {
+
+    border-width: 3px;
+    border-color: rgb(0, 0, 0);
+
+}
+
+#textQuest {
+    background-color: rgb(252, 252, 252);
+    border: 0px;
+    box-shadow: rgba(0, 0, 0, 0.15) 2.4px 2.4px 3.2px;
+}
+
+#verdebtn {
+    background-color: white;
+    color: rgb(14, 110, 26);
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(14, 110, 26);
+    transition-duration: 0.4s;
+    padding: 7px 24px;
+
+}
+
+#verdebtn:hover {
+    background-color: rgb(14, 110, 26);
+    color: white;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: rgb(14, 110, 26);
+    padding: 7px 24px;
+
+
+}
+
+#imgrsp {
+    width: 50%;
+    height: 50%;
+    text-align:center;
+}
+
+
+#imgrsp2 {
+    width: 50%;
+    height: 50%;
+}
+
+#textQuest {
+    height: 120px;
+}
+
+#perg {
+    background-color: aliceblue;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    border-radius: 20px;
+    transition-duration: 0.2s;
+}
+
+#perg:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-left: 3px;
+}
+
+#cursosl {
+    background-color: aliceblue;
+    box-shadow: rgba(17, 17, 26, 0.1) 0px 1px 0px;
+    border-radius: 5px;
+    transition-duration: 0.2s;
+
+}
+#cursosl:hover {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+    margin-left: 3px;
+}
+
+
+.card {
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+
+#search {
+    border-radius: 8px;
+}
+
+#pretobtn:hover {
+    background-color: black;
+    color: white;
+    border-radius: 8px;
+    border: 2px solid;
+    border-color: black;
+    padding: 7px 24px;
+
+
+}
+
+#textocurso {
+    margin-left: 5px;
+    color: black;
+
+
+}
+
+.row {
+    margin: 0;
+}
+
+.container {
+    padding: 70px 0;
+}
+
+p, li {
+    color: #444;
+    font-size: 14px;
+}
+
+header, .navbar {
+    background-color: #353D41;
+}
+
+#nav-container {
+    padding-top: 0;
+    padding-bottom: 0;
+
+}
+
+#logo {
+    width: 60px;
+    height: 60px;
+}
+
+.navbar-brand {
+    padding: 0;
+    color: #FFF;
+}
+
+.navbar-brand:hover {
+    color: #FFF;
+}
+
+#navbar-links a {
+    color: #FFF;
+}
+
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding: 1rem .8rem;
+}
+

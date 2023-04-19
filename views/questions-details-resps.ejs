@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Detalhes da Questão</title>
+</head>
+
+<body>
+    <header>
+        <%-include('./partials/navbar') %>
+    </header>
+    <div class="container">
+
+        <div class="card mt-5  text-center ">
+            <div class="card-header text-white" style="background-color: black; font-size: 18px;">
+                <%=question.title_question%>
+            </div>
+
+            <div class="card-body">
+                <div class="mt-3">
+                    <div class=" mb-1" style="float: left;">Por: <%=question.name_user %> às <%=
+                                moment(question.dt_question).format('HH:mm') %> de <%=
+                                    moment(question.dt_question).format('DD/MM/YYYY') %>
+                    </div>
+
+                    <div class="mt-3">
+                        <textarea disabled type="textQuest" name="textQuest" id="textQuest"
+                            class="form-control"><%=question.text_question%></textarea>
+                    </div>
+
+
+                    <div class="mt-3  mb-03">
+                        <div class="d-flex flex-column">
+                            <% if(qtddImagesQuestion !==0) { %>
+                                <label for="name" class="form-label mt-2">Imagens</label>
+                                <% } %>
+                                    <% imagesQuestion.forEach(image=> { %>
+                                        <div class="mt-5">
+                                            <img id="imgrsp"
+                                                src="data:<%=image.extension_image%>;base64,<%=image.bin_image%>">
+                                        </div>
+                                        <% }) %>
+                        </div>
+                    </div>
+
+
+                    <div class="mt-3">
+                        <a href="/matters/<%=idMatter%>/questions/<%=id%>/answer/new" class="btn text-decoration:none"
+                            id="azulbtn">Responder</a>
+                        <a href="/matters/<%=idMatter%>/questions" class="btn btn-secondary" id="cinzabtn">Voltar</a>
+                    </div>
+                </div>
+            </div>
+            <div class="card-header text-white bg-secondary mt-2">
+                Respostas
+            </div>
+
+            <div class="card-body">
+                <% answers.forEach(answer=> { %>
+                    <div class="mb-2 " style="float: left;">Por: <%=answer.name_user%> - <%=
+                                moment(answer.dt_answer).format('DD/MM/YYYY') %> as <%=
+                                    moment(answer.dt_answer).format('HH:mm') %>
+                    </div>
+                    <!--Botoes de excluir e editar-->
+                    <div style="float:right">
+                        <% if(answer.pk_id_user==userOn || isAdmin==1) { %>
+                            <a
+                                href="/matters/<%=answer.pk_id_matter%>/question/<%=answer.pk_id_question%>/answer/delete/<%=answer.pk_id_answer%>">
+                                <img id="logo" src="/apagar.svg" style="width: 25px; height: 25px; margin-right:10px">
+                            </a>
+                            <a
+                                href="/matters/<%=answer.pk_id_matter%>/question/<%=answer.pk_id_question%>/answer/edit/<%=answer.pk_id_answer%>">
+                                <img id="logo" src="/editar.svg" style="width: 25px; height: 25px"> </a>
+                            <% } %>
+                    </div>
+                    <div>
+                        <div class="mt-3">
+                            <textarea disabled type="textQuest" name="textQuest" id="textQuest"
+                                class="form-control mb-5"><%=answer.text_answer%></textarea>
+                        </div>
+
+                        <div class="mt-3  mb-03">
+                            <div class="d-flex flex-column">
+                                <label for="name" class="form-label">Imagens</label>
+                                <% imagesAnswer.forEach(image=> { %>
+                                    <% if(image.fk_id_answer==answer.pk_id_answer) { %>
+
+                                        <div class="mt-5">
+                                            <img id="imgrsp"
+                                                src="data:<%=image.extension_image%>;base64,<%=image.bin_image%>">
+                                        </div>
+                                        <% } %>
+                                            <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-5">
+                    <% }) %>
+            </div>
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+            crossorigin="anonymous"></script>
+</body>
+
+</html>
